@@ -4,9 +4,11 @@
 
 | Program                        | Address                                      | Upgrade Authority                            |
 | ------------------------------ | -------------------------------------------- | -------------------------------------------- |
-| rfq                            | J7WkE9mTzwTo3pjxENdrH7sekZPrN2VYNpk1pgfZxVr9 | HMMqtjVBqxwC2kqGMd3oPQ7pSwyqbpGLzYTp1onr21G2 |
-| risk-engine                    | 6rosVyXKwj9tiHubXUBTguaCELsci4pBEuiRy36Lbz1p | HMMqtjVBqxwC2kqGMd3oPQ7pSwyqbpGLzYTp1onr21G2 |
-| spot-instrument                | CjQCEjXtG3QNBuT5Z1sctaAYCo5Mt6edftqHQetEPo9w | HMMqtjVBqxwC2kqGMd3oPQ7pSwyqbpGLzYTp1onr21G2 |
-| psyoptions-american-instrument | 6JG1tWK4w6LmjeXbmDZJsmUsPSjgnp74j2XPsTvjjTX8 | HMMqtjVBqxwC2kqGMd3oPQ7pSwyqbpGLzYTp1onr21G2 |
-| psyoptions-european-instrument | A86fhhdNVDdXV8pB48WXtPeM3EBkcBeJEdrx9xrUo9nF | HMMqtjVBqxwC2kqGMd3oPQ7pSwyqbpGLzYTp1onr21G2 |
+| rfq                            | FqAhTZg86EKEzeWMLtutVDRXJuLWrey7oDHr3Au6RFdo | FaxEp61FTzibAkXqmVeiEfev9pj1mrrbbsLa9v1yzuTf |
+| risk-engine                    | CtfTi4TstqJaxEh8giQ7kK8CKXsJyF9CuwdcVoqGrEi1 | FaxEp61FTzibAkXqmVeiEfev9pj1mrrbbsLa9v1yzuTf |
+| spot-instrument                | BMXWVaYPVJ4G8g2MMJt51CDgjHHuoirPMvsTUadv3s3v | FaxEp61FTzibAkXqmVeiEfev9pj1mrrbbsLa9v1yzuTf |
+| psyoptions-american-instrument | HpmyVA3t3uNGgdx86AuwZww7gnAWB57vepnk3732vEr9 | FaxEp61FTzibAkXqmVeiEfev9pj1mrrbbsLa9v1yzuTf |
+| psyoptions-european-instrument | 4KC8MQi2zQGr7LhTCVTMhbKuP4KcpTmdZjxsDBWrTSVf | FaxEp61FTzibAkXqmVeiEfev9pj1mrrbbsLa9v1yzuTf |
+| hxro\_print\_trade\_provider   | 6zyXbd44vYHhpC1gxZr2BhM6m7jThqsBphn2GD36bUi3 | FaxEp61FTzibAkXqmVeiEfev9pj1mrrbbsLa9v1yzuTf |
+| vault\_operator                | DftT8Q74YPqwrtJzy6g97XLzouG2YWaWZfRad6yK2GvA | FaxEp61FTzibAkXqmVeiEfev9pj1mrrbbsLa9v1yzuTf |
 

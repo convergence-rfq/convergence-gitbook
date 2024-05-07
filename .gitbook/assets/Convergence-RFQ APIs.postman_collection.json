@@ -1,0 +1,2817 @@
+{
+	"info": {
+		"_postman_id": "0a976d67-edf9-4c56-ad32-2adb3c0ff021",
+		"name": "Convergence-RFQ APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4859977"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "instruments",
+					"item": [
+						{
+							"name": "Get instruments",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "713e7299-4dde-4127-84bf-a091451687cc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/instruments?cluster=devnet",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"instruments"
+									],
+									"query": [
+										{
+											"key": "cluster",
+											"value": "devnet"
+										}
+									]
+								},
+								"description": "Get the recent blockhash from the Solana blockchain."
+							},
+							"response": [
+								{
+									"name": "Successful response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/instruments",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"instruments"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": \"<string>\",\n  \"blockhash\": \"<string>\"\n}"
+								},
+								{
+									"name": "Bad request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/instruments",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"instruments"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"example\": {\n    \"status\": \"error\",\n    \"message\": \"An error occurred while fetching the instruments\"\n  }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "registration",
+					"item": [
+						{
+							"name": "Registration",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"registration"
+									]
+								},
+								"description": "Get the recent blockhash from the Solana blockchain."
+							},
+							"response": [
+								{
+									"name": "Successful response",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\": \"xyz@gamil.com\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/registration",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"registration"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"example\": {\n    \"status\": \"success\",\n    \"response\": \"api key\"\n  }\n}"
+								},
+								{
+									"name": "Bad request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\": \"xyz@gamil.com\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/recent-blockhash",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"recent-blockhash"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"example\": {\n    \"status\": \"error\",\n    \"message\": \"An error occurred while fetching the recent blockhash\"\n  }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "collateral",
+					"item": [
+						{
+							"name": "fund",
+							"item": [
+								{
+									"name": "Fund collateral for a user.",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "713e7299-4dde-4127-84bf-a091451687cc",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"userAddress\": \"89YhVTrGb1WSbPkMsps7FUWtwoaXYHhQuDW3taudUYtB\",\n  \"amount\": \"100\",\n  \"cluster\": \"devnet\"\n\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/collateral/fund",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"collateral",
+												"fund"
+											]
+										},
+										"description": "Fund collateral for a user."
+									},
+									"response": [
+										{
+											"name": "Successful response",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"userAddress\": \"<string>\",\n  \"amount\": \"<number>\",\n  \"cluster\": \"devnet\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/collateral/fund",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"collateral",
+														"fund"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"example\": {\n    \"status\": \"success\",\n    \"response\": \"AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAQHNu+sZHFIvpC5pR0GyvQ8uJbeoylFjSTu0oBSKM473gsyoqbvWmPWvtUcAW7PcZ3rZOTqmGwUDoftrYPfE1JOWtgAoAGBxwofvA5dCpbiIa8Kov9ugpt83D7q9by/IH0ePEHN+aGWx+m12WBWJwh82h4HILoJsrWfyEu6f2IbmxSUPOhWY2l/jrI2GQJBddkAIfstYuUwMnWDJb++u99v0wLQjefUKoHxvpRU94PY5ImTzE8CdK+tCHePtWZEUHfQBt324ddloZPZy+FGzut5rBy0he1fWzeROoz1hX7/AKnIv+tWLZpfhnEsPTHvmyozcePNWOfVPmQbD6b8k3q2IQEDBgABBAUCBhA3e6iSJDfR1QDKmjsAAAAA\"\n  }\n}"
+										},
+										{
+											"name": "Bad request",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"userAddress\": \"<string>\",\n  \"amount\": \"<number>\",\n  \"cluster\": \"devnet\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/collateral/fund",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"collateral",
+														"fund"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"example\": {\n    \"status\": \"error\",\n    \"message\": \"Address is undefined\"\n  }\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "withdraw",
+							"item": [
+								{
+									"name": "Withdraw collateral for a user.",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"userAddress\": \"89YhVTrGb1WSbPkMsps7FUWtwoaXYHhQuDW3taudUYtB\",\n  \"amount\": \"10\",\n  \"cluster\": \"devnet\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/collateral/withdraw",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"collateral",
+												"withdraw"
+											]
+										},
+										"description": "Withdraw collateral for a user."
+									},
+									"response": [
+										{
+											"name": "Successful response",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"userAddress\": \"<string>\",\n  \"amount\": \"<number>\",\n  \"cluster\": \"devnet\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/collateral/withdraw",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"collateral",
+														"withdraw"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"example\": {\n    \"status\": \"success\",\n    \"response\": \"AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAQHNu+sZHFIvpC5pR0GyvQ8uJbeoylFjSTu0oBSKM473gsyoqbvWmPWvtUcAW7PcZ3rZOTqmGwUDoftrYPfE1JOWtgAoAGBxwofvA5dCpbiIa8Kov9ugpt83D7q9by/IH0ePEHN+aGWx+m12WBWJwh82h4HILoJsrWfyEu6f2IbmxSUPOhWY2l/jrI2GQJBddkAIfstYuUwMnWDJb++u99v0wLQjefUKoHxvpRU94PY5ImTzE8CdK+tCHePtWZEUHfQBt324ddloZPZy+FGzut5rBy0he1fWzeROoz1hX7/AKnIv+tWLZpfhnEsPTHvmyozcePNWOfVPmQbD6b8k3q2IQEDBgABBAUCBhA3e6iSJDfR1QDKmjsAAAAA\"\n  }\n}"
+										},
+										{
+											"name": "Bad request",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"userAddress\": \"<string>\",\n  \"amount\": \"<number>\",\n  \"cluster\": \"devnet\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/collateral/withdraw",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"collateral",
+														"withdraw"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"example\": {\n    \"status\": \"error\",\n    \"message\": \"Address is undefined\"\n  }\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Retrieve the collateral account for a given user address.",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "713e7299-4dde-4127-84bf-a091451687cc",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/collateral?userAddress=89YhVTrGb1WSbPkMsps7FUWtwoaXYHhQuDW3taudUYtB&cluster=devnet",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"collateral"
+									],
+									"query": [
+										{
+											"key": "userAddress",
+											"value": "89YhVTrGb1WSbPkMsps7FUWtwoaXYHhQuDW3taudUYtB"
+										},
+										{
+											"key": "cluster",
+											"value": "devnet"
+										}
+									]
+								},
+								"description": "Retrieve the collateral account for a given user address."
+							},
+							"response": [
+								{
+									"name": "Successful response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/collateral?userAddress=<string>&cluster=devnet",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"collateral"
+											],
+											"query": [
+												{
+													"key": "userAddress",
+													"value": "<string>",
+													"description": "(Required) "
+												},
+												{
+													"key": "cluster",
+													"value": "devnet"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"example\": {\n    \"status\": \"success\",\n    \"response\": {\n      \"model\": \"collateral\",\n      \"address\": \"CEDbLGRCdihUx97rpckeuduac5AHehbo2gK2WpCCSPMA\",\n      \"user\": \"2YrHzjFpKQxL5ZmhjVsA1R9qEGmTirrEmt5f4Zv8CtWA\",\n      \"lockedTokensAmount\": 1000\n    }\n  }\n}"
+								},
+								{
+									"name": "Bad request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/collateral?userAddress=<string>&cluster=devnet",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"collateral"
+											],
+											"query": [
+												{
+													"key": "userAddress",
+													"value": "<string>",
+													"description": "(Required) "
+												},
+												{
+													"key": "cluster",
+													"value": "devnet"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"example\": {\n    \"status\": \"error\",\n    \"message\": \"User address is not supplied\"\n  }\n}"
+								}
+							]
+						},
+						{
+							"name": "Create a collateral account transaction for a user address.",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"userAddress\": \"89YhVTrGb1WSbPkMsps7FUWtwoaXYHhQuDW3taudUYtB\",\n  \"cluster\": \"devnet\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/collateral",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"collateral"
+									]
+								},
+								"description": "Create a collateral account transaction for a user address."
+							},
+							"response": [
+								{
+									"name": "Successful response",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"userAddress\": \"<string>\",\n   \"cluster\": \"devnet\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/collateral",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"collateral"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"example\": {\n    \"status\": \"success\",\n    \"response\": \"base64-encoded-transaction\"\n  }\n}"
+								},
+								{
+									"name": "Bad request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"userAddress\": \"<string>\",\n  \"cluster\": \"devnet\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/collateral",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"collateral"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"example\": {\n    \"status\": \"error\",\n    \"message\": \"An error occurred during transaction creation\"\n  }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "orders",
+					"item": [
+						{
+							"name": "{order_id}",
+							"item": [
+								{
+									"name": "Get an order by order ID.",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "713e7299-4dde-4127-84bf-a091451687cc",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/orders/:order_id?cluster=devnet",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"orders",
+												":order_id"
+											],
+											"query": [
+												{
+													"key": "cluster",
+													"value": "devnet"
+												}
+											],
+											"variable": [
+												{
+													"key": "order_id",
+													"value": "9BxGdbfSykvCBTrS6yzrzA76bGKSscXb96TgNP39saTv"
+												}
+											]
+										},
+										"description": "Get an order by order ID."
+									},
+									"response": [
+										{
+											"name": "Successful response",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/orders/:order_id?cluster=devnet",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"orders",
+														":order_id"
+													],
+													"query": [
+														{
+															"key": "cluster",
+															"value": "devnet"
+														}
+													],
+													"variable": [
+														{
+															"key": "order_id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"example\": {\n    \"status\": \"success\",\n    \"response\": \"order_data\"\n  }\n}"
+										},
+										{
+											"name": "Bad request",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/orders/:order_id?cluster=devnet",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"orders",
+														":order_id"
+													],
+													"query": [
+														{
+															"key": "cluster",
+															"value": "devnet"
+														}
+													],
+													"variable": [
+														{
+															"key": "order_id"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"example\": {\n    \"status\": \"error\",\n    \"message\": \"Order ID is not provided or invalid\"\n  }\n}"
+										}
+									]
+								},
+								{
+									"name": "Fund an order by order ID",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "713e7299-4dde-4127-84bf-a091451687cc",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"userAddress\": \"89YhVTrGb1WSbPkMsps7FUWtwoaXYHhQuDW3taudUYtB\",\n  \"cluster\": \"devnet\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/orders/:order_id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"orders",
+												":order_id"
+											],
+											"variable": [
+												{
+													"key": "order_id",
+													"value": "GxPCnDJbW3UZ7qFy6VVegqbC8NaB6txE6QoGTU2UahmG"
+												}
+											]
+										},
+										"description": "Get an order by order ID."
+									},
+									"response": [
+										{
+											"name": "Successful response",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"userAddress\": \"<string>\",\n    \"cluster\": \"devnet\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/orders/:order_id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"orders",
+														":order_id"
+													],
+													"variable": [
+														{
+															"key": "order_id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"example\": {\n    \"status\": \"success\",\n    \"response\": \"order_data\"\n  }\n}"
+										},
+										{
+											"name": "Bad request",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/orders/:order_id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"orders",
+														":order_id"
+													],
+													"variable": [
+														{
+															"key": "order_id"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"example\": {\n    \"status\": \"error\",\n    \"message\": \"Order ID is not provided or invalid\"\n  }\n}"
+										}
+									]
+								},
+								{
+									"name": "Settle an order by order ID",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"userAddress\": \"89YhVTrGb1WSbPkMsps7FUWtwoaXYHhQuDW3taudUYtB\",\n  \"cluster\": \"devnet\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/orders/:order_id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"orders",
+												":order_id"
+											],
+											"variable": [
+												{
+													"key": "order_id",
+													"value": "87FxvrnDR5N8VWXAYVjYiARSEK1WLi6iWRzyuKPKGNjZ"
+												}
+											]
+										},
+										"description": "Get an order by order ID."
+									},
+									"response": [
+										{
+											"name": "Successful response",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"userAddress\": \"<string>\",\n    \"cluster\": \"devnet\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/orders/:order_id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"orders",
+														":order_id"
+													],
+													"variable": [
+														{
+															"key": "order_id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"example\": {\n    \"status\": \"success\",\n    \"response\": \"order_data\"\n  }\n}"
+										},
+										{
+											"name": "Bad request",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/orders/:order_id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"orders",
+														":order_id"
+													],
+													"variable": [
+														{
+															"key": "order_id"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"example\": {\n    \"status\": \"error\",\n    \"message\": \"Order ID is not provided or invalid\"\n  }\n}"
+										}
+									]
+								},
+								{
+									"name": "Cancel an order by order ID.",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/orders/:order_id?userAddress&cluster",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"orders",
+												":order_id"
+											],
+											"query": [
+												{
+													"key": "userAddress",
+													"value": null
+												},
+												{
+													"key": "cluster",
+													"value": null
+												}
+											],
+											"variable": [
+												{
+													"key": "order_id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Cancel an order by order ID."
+									},
+									"response": [
+										{
+											"name": "Successful response",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/orders/:order_id?cluster=devnet&userAddress",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"orders",
+														":order_id"
+													],
+													"query": [
+														{
+															"key": "cluster",
+															"value": "devnet"
+														},
+														{
+															"key": "userAddress",
+															"value": null
+														}
+													],
+													"variable": [
+														{
+															"key": "order_id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"example\": {\n    \"status\": \"success\",\n    \"response\": \"AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAQHNu+sZHFIvpC5pR0GyvQ8uJbeoylFjSTu0oBSKM473gsyoqbvWmPWvtUcAW7PcZ3rZOTqmGwUDoftrYPfE1JOWtgAoAGBxwofvA5dCpbiIa8Kov9ugpt83D7q9by/IH0ePEHN+aGWx+m12WBWJwh82h4HILoJsrWfyEu6f2IbmxSUPOhWY2l/jrI2GQJBddkAIfstYuUwMnWDJb++u99v0wLQjefUKoHxvpRU94PY5ImTzE8CdK+tCHePtWZEUHfQBt324ddloZPZy+FGzut5rBy0he1fWzeROoz1hX7/AKnIv+tWLZpfhnEsPTHvmyozcePNWOfVPmQbD6b8k3q2IQEDBgABBAUCBhA3e6iSJDfR1QDKmjsAAAAA\"\n  }\n}"
+										},
+										{
+											"name": "Bad request",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/orders/:order_id?cluster=devnet&userAddress",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"orders",
+														":order_id"
+													],
+													"query": [
+														{
+															"key": "cluster",
+															"value": "devnet"
+														},
+														{
+															"key": "userAddress",
+															"value": null
+														}
+													],
+													"variable": [
+														{
+															"key": "order_id"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"example\": {\n    \"status\": \"error\",\n    \"message\": \"Address is undefined\"\n  }\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Get orders by owner.",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "713e7299-4dde-4127-84bf-a091451687cc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/orders?userAddress=89YhVTrGb1WSbPkMsps7FUWtwoaXYHhQuDW3taudUYtB&cluster=devnet",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"orders"
+									],
+									"query": [
+										{
+											"key": "userAddress",
+											"value": "89YhVTrGb1WSbPkMsps7FUWtwoaXYHhQuDW3taudUYtB",
+											"description": "(Required) "
+										},
+										{
+											"key": "cluster",
+											"value": "devnet"
+										}
+									]
+								},
+								"description": "Get orders owned by a user's Solana address."
+							},
+							"response": [
+								{
+									"name": "Successful response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/orders?userAddress=<string>&cluster=devnet",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"orders"
+											],
+											"query": [
+												{
+													"key": "userAddress",
+													"value": "<string>",
+													"description": "(Required) "
+												},
+												{
+													"key": "cluster",
+													"value": "devnet"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"example\": {\n    \"status\": \"success\",\n    \"response\": \"order_data\"\n  }\n}"
+								},
+								{
+									"name": "Bad request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/orders?userAddress=<string>&cluster=devnet",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"orders"
+											],
+											"query": [
+												{
+													"key": "userAddress",
+													"value": "<string>",
+													"description": "(Required) "
+												},
+												{
+													"key": "cluster",
+													"value": "devnet"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"example\": {\n    \"status\": \"error\",\n    \"message\": \"User address is not supplied or invalid\"\n  }\n}"
+								}
+							]
+						},
+						{
+							"name": "Respond to RFQ transaction.",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "713e7299-4dde-4127-84bf-a091451687cc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"userAddress\": \"89YhVTrGb1WSbPkMsps7FUWtwoaXYHhQuDW3taudUYtB\",\n  \"rfq\": \"H9v5umFN5oiYABm7jK7KtLNsjR8GiXSoCRysErk9FjMg\",\n  \"amount\": \"300\",\n  \"cluster\": \"devnet\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/orders",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"orders"
+									]
+								},
+								"description": "Respond to a Request for Quote (RFQ) transaction with the specified Solana address, RFQ, and amount."
+							},
+							"response": [
+								{
+									"name": "Successful response",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"address\": \"<string>\",\n  \"rfq\": \"<string>\",\n  \"amount\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/orders",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"orders"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"example\": {\n    \"status\": \"success\",\n    \"response\": \"base64-encoded-transaction\"\n  }\n}"
+								},
+								{
+									"name": "Bad request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"address\": \"<string>\",\n  \"rfq\": \"<string>\",\n  \"amount\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/orders",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"orders"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"example\": {\n    \"status\": \"error\",\n    \"message\": \"User address is not supplied\"\n  }\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete all orders by owner.",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/orders?userAddress=<string>&cluster=devnet",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"orders"
+									],
+									"query": [
+										{
+											"key": "userAddress",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "cluster",
+											"value": "devnet"
+										}
+									]
+								},
+								"description": "Get orders owned by a user's Solana address."
+							},
+							"response": [
+								{
+									"name": "Successful response",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/orders?userAddress=<string>&cluster=devnet",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"orders"
+											],
+											"query": [
+												{
+													"key": "userAddress",
+													"value": "<string>",
+													"description": "(Required) "
+												},
+												{
+													"key": "cluster",
+													"value": "devnet"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"example\": {\n    \"status\": \"success\",\n    \"response\": \"order_data\"\n  }\n}"
+								},
+								{
+									"name": "Bad request",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/orders?userAddress=<string>&cluster=devnete",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"orders"
+											],
+											"query": [
+												{
+													"key": "userAddress",
+													"value": "<string>",
+													"description": "(Required) "
+												},
+												{
+													"key": "cluster",
+													"value": "devnete"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"example\": {\n    \"status\": \"error\",\n    \"message\": \"User address is not supplied or invalid\"\n  }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "rfqs",
+					"item": [
+						{
+							"name": "{rfqid}",
+							"item": [
+								{
+									"name": "orders",
+									"item": [
+										{
+											"name": "Get orders for an RFQ.",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "713e7299-4dde-4127-84bf-a091451687cc",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": []
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/rfqs/:rfqid/orders?cluster=devnet",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"rfqs",
+														":rfqid",
+														"orders"
+													],
+													"query": [
+														{
+															"key": "cluster",
+															"value": "devnet"
+														}
+													],
+													"variable": [
+														{
+															"key": "rfqid",
+															"value": "4CdASVdtEph1U3oTiUy481yzdmvTxWWz5bnNiLGZt4rE"
+														}
+													]
+												},
+												"description": "Get orders associated with a Request for Quote (RFQ) ID."
+											},
+											"response": [
+												{
+													"name": "Successful response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/rfqs/:rfqid/orders?cluster",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"rfqs",
+																":rfqid",
+																"orders"
+															],
+															"query": [
+																{
+																	"key": "cluster",
+																	"value": null
+																}
+															],
+															"variable": [
+																{
+																	"key": "rfqid"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"example\": {\n    \"status\": \"success\",\n    \"response\": \"orders_data\"\n  }\n}"
+												},
+												{
+													"name": "Bad request",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/rfqs/:rfqid/orders?cluster",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"rfqs",
+																":rfqid",
+																"orders"
+															],
+															"query": [
+																{
+																	"key": "cluster",
+																	"value": null
+																}
+															],
+															"variable": [
+																{
+																	"key": "rfqid"
+																}
+															]
+														}
+													},
+													"status": "Bad Request",
+													"code": 400,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"example\": {\n    \"status\": \"error\",\n    \"message\": \"Address is undefined\"\n  }\n}"
+												}
+											]
+										},
+										{
+											"name": "Confirm RFQ response transaction.",
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"userAddress\": \"<string>\",\n  \"responseAccount\": \"<string>\",\n  \"responseSide\": \"<string>\",\n  \"cluster\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/rfqs/:rfqid/orders",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"rfqs",
+														":rfqid",
+														"orders"
+													],
+													"variable": [
+														{
+															"key": "rfqid",
+															"value": "<string>"
+														}
+													]
+												},
+												"description": "Confirm a response to a Request for Quote (RFQ) by providing user address, RFQ ID, response account, and response side."
+											},
+											"response": [
+												{
+													"name": "Successful response",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"address\": \"<string>\",\n  \"responseAccount\": \"<string>\",\n  \"responseSide\": \"<string>\",\n  \"cluster\": \"devnet\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/rfqs/:rfqid/orders",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"rfqs",
+																":rfqid",
+																"orders"
+															],
+															"variable": [
+																{
+																	"key": "rfqid"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"example\": {\n    \"status\": \"success\",\n    \"response\": \"response_data\"\n  }\n}"
+												},
+												{
+													"name": "Bad request",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"address\": \"<string>\",\n  \"responseAccount\": \"<string>\",\n  \"responseSide\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/rfqs/:rfqid/orders",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"rfqs",
+																":rfqid",
+																"orders"
+															],
+															"variable": [
+																{
+																	"key": "rfqid"
+																}
+															]
+														}
+													},
+													"status": "Bad Request",
+													"code": 400,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"example\": {\n    \"status\": \"error\",\n    \"message\": \"An error occurred during confirmation\"\n  }\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "Get RFQ by ID.",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "713e7299-4dde-4127-84bf-a091451687cc",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/rfqs/:rfqid?cluster=devnet",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"rfqs",
+												":rfqid"
+											],
+											"query": [
+												{
+													"key": "cluster",
+													"value": "devnet"
+												}
+											],
+											"variable": [
+												{
+													"key": "rfqid",
+													"value": "EJjSZ4qFfBA5bA8t3ZUDUQ1AJtuFUn2Dh2aCNaUMx4iY"
+												}
+											]
+										},
+										"description": "Get a Request for Quote (RFQ) by its ID."
+									},
+									"response": [
+										{
+											"name": "Successful response",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/rfqs/:rfqid",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"rfqs",
+														":rfqid"
+													],
+													"variable": [
+														{
+															"key": "rfqid"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"example\": {\n    \"status\": \"success\",\n    \"response\": \"rfq_data\"\n  }\n}"
+										},
+										{
+											"name": "Bad request",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/rfqs/:rfqid",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"rfqs",
+														":rfqid"
+													],
+													"variable": [
+														{
+															"key": "rfqid"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"example\": {\n    \"status\": \"error\",\n    \"message\": \"Address is undefined\"\n  }\n}"
+										}
+									]
+								},
+								{
+									"name": "Cancel RFQ by ID.",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/rfqs/:rfqid?userAddress&cluster",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"rfqs",
+												":rfqid"
+											],
+											"query": [
+												{
+													"key": "userAddress",
+													"value": null
+												},
+												{
+													"key": "cluster",
+													"value": null
+												}
+											],
+											"variable": [
+												{
+													"key": "rfqid",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Cancel a Request for Quote (RFQ) by its ID and user address."
+									},
+									"response": [
+										{
+											"name": "Successful response",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/rfqs/:rfqid?userAddress&cluster",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"rfqs",
+														":rfqid"
+													],
+													"query": [
+														{
+															"key": "userAddress",
+															"value": null
+														},
+														{
+															"key": "cluster",
+															"value": null
+														}
+													],
+													"variable": [
+														{
+															"key": "rfqid"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"example\": {\n    \"status\": \"success\",\n    \"response\": \"base64-encoded-transaction\"\n  }\n}"
+										},
+										{
+											"name": "Bad request",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/rfqs/:rfqid?cluster&userAddress",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"rfqs",
+														":rfqid"
+													],
+													"query": [
+														{
+															"key": "cluster",
+															"value": null
+														},
+														{
+															"key": "userAddress",
+															"value": null
+														}
+													],
+													"variable": [
+														{
+															"key": "rfqid"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"example\": {\n    \"status\": \"error\",\n    \"message\": \"An error occurred while creating canceling RFQ transaction\"\n  }\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Get RFQs.",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "713e7299-4dde-4127-84bf-a091451687cc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/rfqs?cluster=devnet",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"rfqs"
+									],
+									"query": [
+										{
+											"key": "userAddress",
+											"value": "89YhVTrGb1WSbPkMsps7FUWtwoaXYHhQuDW3taudUYtB",
+											"description": "optional",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "<number>",
+											"description": "optional",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "<number>",
+											"description": "optional",
+											"disabled": true
+										},
+										{
+											"key": "paginationToken",
+											"value": "<string>",
+											"description": "optioanl",
+											"disabled": true
+										},
+										{
+											"key": "instrument",
+											"value": "<string>",
+											"description": "optional (spot, options)",
+											"disabled": true
+										},
+										{
+											"key": "rfqAccountAddress",
+											"value": "<string>",
+											"description": "optioanl",
+											"disabled": true
+										},
+										{
+											"key": "cluster",
+											"value": "devnet",
+											"description": "required"
+										}
+									]
+								},
+								"description": "Get a list of Request for Quotes (RFQs)."
+							},
+							"response": [
+								{
+									"name": "Successful response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/rfqs?userAddress=<string>&page=<number>&limit=<number>&paginationToken=<string>&instrument=<string>&rfqAccountAddress=<string>&cluster=devnet",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"rfqs"
+											],
+											"query": [
+												{
+													"key": "userAddress",
+													"value": "<string>"
+												},
+												{
+													"key": "page",
+													"value": "<number>"
+												},
+												{
+													"key": "limit",
+													"value": "<number>"
+												},
+												{
+													"key": "paginationToken",
+													"value": "<string>"
+												},
+												{
+													"key": "instrument",
+													"value": "<string>"
+												},
+												{
+													"key": "rfqAccountAddress",
+													"value": "<string>"
+												},
+												{
+													"key": "cluster",
+													"value": "devnet"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"example\": {\n    \"status\": \"success\",\n    \"response\": \"rfqs_data\"\n  }\n}"
+								},
+								{
+									"name": "Bad request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/rfqs?useraddress=<string>&pageSize=<number>&cluster=devnet",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"rfqs"
+											],
+											"query": [
+												{
+													"key": "useraddress",
+													"value": "<string>"
+												},
+												{
+													"key": "pageSize",
+													"value": "<number>"
+												},
+												{
+													"key": "cluster",
+													"value": "devnet"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"example\": {\n    \"status\": \"error\",\n    \"message\": \"An error occurred while fetching RFQs\"\n  }\n}"
+								}
+							]
+						},
+						{
+							"name": "Create RFQ.",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "713e7299-4dde-4127-84bf-a091451687cc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"cluster\": \"devnet\",\n    \"rfqType\": \"futures\",\n    \"amount\": 1,\n    \"quoteMint\": \"BREWDGvXEQKx9FkZrSCajzjy4cpm9hofzze3b41Z3V4p\",\n    \"baseMint\": \"A3c9ThQZTUruMm56Eu4fxVwRosg4nBTpJe2B1pxBMYK7\",\n    \"userAddress\": \"89YhVTrGb1WSbPkMsps7FUWtwoaXYHhQuDW3taudUYtB\",\n    \"orderType\": \"buy\",\n    \"rfqSize\": \"fixed-base\",\n    \"rfqExpiry\": \"10800\",\n    \"settlementWindow\": \"320\",\n    \"counterParties\": [],\n    \"optionStyle\": \"american\",\n    \"strategyData\": [\n        {\n            \"baseAsset\": \"BTC\",\n            \"direction\": true,\n            \"instrument\": \"Call\",\n            \"quoteAsset\": \"USDC\",\n            \"size\": 3,\n            \"strike\": 44000,\n            \"expiry\": 1713513600,\n            \"productIndex\": 2\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/rfqs",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"rfqs"
+									]
+								},
+								"description": "Create a new Request for Quote (RFQ)."
+							},
+							"response": [
+								{
+									"name": "Successful response",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"amount\": \"<number>\",\n  \"quoteMint\": \"<string>\",\n  \"baseMint\": \"<string>\",\n  \"address\": \"<string>\",\n  \"orderType\": \"<string>\",\n  \"rfqSize\": \"<number>\",\n  \"rfqExpiry\": \"<number>\",\n  \"settlementWindow\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/rfqs",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"rfqs"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"example\": {\n    \"status\": \"success\",\n    \"response\": \"base64-encoded-transaction\",\n    \"rfq\": \"rfq_address\"\n  }\n}"
+								},
+								{
+									"name": "Bad request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"amount\": \"<number>\",\n  \"quoteMint\": \"<string>\",\n  \"baseMint\": \"<string>\",\n  \"address\": \"<string>\",\n  \"orderType\": \"<string>\",\n  \"rfqSize\": \"<number>\",\n  \"rfqExpiry\": \"<number>\",\n  \"settlementWindow\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/rfqs",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"rfqs"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"example\": {\n    \"status\": \"error\",\n    \"message\": \"An error occurred while creating RFQ\"\n  }\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "/"
+		}
+	]
+}

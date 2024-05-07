@@ -1,6 +1,7 @@
 # Table of contents
 
-* [Welcome](README.md)
+* [sitemap.xml](README.md)
+* [Welcome](<README (1).md>)
 * [Community](community.md)
 
 ## 🏛️ Protocol
@@ -35,6 +36,7 @@
 * [TypeScript SDK](developers/typescript-sdk.md)
 * [CLI](developers/cli.md)
 * [REST API](developers/rest-api/README.md)
-  * [Get All Global RFQs](developers/rest-api/get-all-global-rfqs.md)
+  * [Interactive Documentation Documentation](developers/rest-api/interactive-documentation-documentation.md)
   * [Postman Collection](developers/rest-api/postman-collection.md)
+  * [Github Market Maker Bot Sample](developers/rest-api/github-market-maker-bot-sample.md)
 * [PsyOptions Integration Example](developers/psyoptions-integration-example.md)

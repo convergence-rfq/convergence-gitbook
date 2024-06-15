@@ -1,7 +1,6 @@
 # Table of contents
 
-* [sitemap.xml](README.md)
-* [Welcome](<README (1).md>)
+* [Welcome](README.md)
 * [Community](community.md)
 
 ## 🏛️ Protocol
